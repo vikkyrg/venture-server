@@ -1,0 +1,14 @@
+const mongoose = require('mongoose');
+
+const moduleSchema = new mongoose.Schema({
+  courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course', required: true },
+  title: { type: String, required: true },
+  slug: { type: String, required: true },
+  description: { type: String, default: '' },
+  order: { type: Number, default: 0 },
+  status: { type: String, enum: ['published', 'draft'], default: 'published' }
+}, { timestamps: true });
+
+moduleSchema.index({ courseId: 1, slug: 1 }, { unique: true });
+
+module.exports = mongoose.model('Module', moduleSchema);
