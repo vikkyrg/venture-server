@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { generateSlug } = require('../utils/slugify');
 
 const moduleSchema = new mongoose.Schema({
   courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course', required: true },
@@ -10,5 +11,12 @@ const moduleSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 moduleSchema.index({ courseId: 1, slug: 1 }, { unique: true });
+
+moduleSchema.pre('validate', function(next) {
+  if (this.slug) {
+    this.slug = generateSlug(this.slug);
+  }
+  next();
+});
 
 module.exports = mongoose.model('Module', moduleSchema);

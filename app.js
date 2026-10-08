@@ -10,6 +10,7 @@ const topicRoutes = require('./routes/topicRoutes');
 const enquiryRoutes = require('./routes/enquiryRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
+const statsRoutes = require('./routes/statsRoutes');
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use('/api/v1/topics', topicRoutes);
 app.use('/api/v1/enquiries', enquiryRoutes);
 app.use('/api/v1/media', mediaRoutes);
 app.use('/api/v1/settings', settingsRoutes);
+app.use('/api/v1/stats', statsRoutes);
 
 // Error Middlewares
 app.use(notFound);
