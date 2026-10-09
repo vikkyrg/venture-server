@@ -4,7 +4,7 @@ const Enquiry = require('../models/Enquiry');
 // @route   POST /api/v1/enquiries
 const createEnquiry = async (req, res, next) => {
   try {
-    const { name, email, phone, course, qualification, experience, preferredMode, message } = req.body;
+    const { name, email, phone, course, qualification, experience, preferredMode, message, source } = req.body;
 
     if (!name || !email || !phone || !course) {
       return res.status(400).json({ success: false, message: 'Please provide required fields: Name, Email, Phone, Course' });
@@ -16,9 +16,9 @@ const createEnquiry = async (req, res, next) => {
       phone,
       course,
       qualification,
-      experience,
       preferredMode,
-      message
+      message,
+      source
     });
 
     res.status(201).json({
@@ -35,10 +35,11 @@ const createEnquiry = async (req, res, next) => {
 // @route   GET /api/v1/enquiries
 const getEnquiries = async (req, res, next) => {
   try {
-    const { status, search } = req.query;
+    const { status, search, source } = req.query;
     let query = {};
 
     if (status) query.status = status;
+    if (source) query.source = source;
     if (search) {
       query.$or = [
         { name: { $regex: search, $options: 'i' } },

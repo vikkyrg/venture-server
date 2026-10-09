@@ -9,6 +9,7 @@ const enquirySchema = new mongoose.Schema({
   experience: { type: String, default: '' },
   preferredMode: { type: String, default: 'Live Online' },
   message: { type: String, default: '' },
+  source: { type: String, enum: ['website', 'contact'], default: 'website' },
   status: { 
     type: String, 
     enum: ['New', 'Contacted', 'Follow-up', 'Converted', 'Closed'], 
