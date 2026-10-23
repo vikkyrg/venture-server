@@ -19,11 +19,10 @@ const topicSchema = new mongoose.Schema({
 
 topicSchema.index({ moduleId: 1, slug: 1 }, { unique: true });
 
-topicSchema.pre('validate', function(next) {
+topicSchema.pre('validate', function() {
   if (this.slug) {
     this.slug = generateSlug(this.slug);
   }
-  next();
 });
 
 module.exports = mongoose.model('Topic', topicSchema);

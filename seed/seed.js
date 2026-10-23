@@ -32,8 +32,8 @@ const seedData = async () => {
     await Settings.create({
       companyName: 'Venture Soft',
       logoUrl: '/src/assets/logo.png',
-      email: 'contact@venturesoft.com',
-      phone: '+91 98765 43210',
+      email: 'hr@venturesofts.com',
+      phone: '+91 80889 93756',
       address: 'Venture Soft Tech Campus, Electronic City, Bangalore 560100',
       socialLinks: {
         linkedin: 'https://linkedin.com/company/venturesoft',

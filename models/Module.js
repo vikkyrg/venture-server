@@ -12,11 +12,10 @@ const moduleSchema = new mongoose.Schema({
 
 moduleSchema.index({ courseId: 1, slug: 1 }, { unique: true });
 
-moduleSchema.pre('validate', function(next) {
+moduleSchema.pre('validate', function() {
   if (this.slug) {
     this.slug = generateSlug(this.slug);
   }
-  next();
 });
 
 module.exports = mongoose.model('Module', moduleSchema);

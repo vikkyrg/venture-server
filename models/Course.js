@@ -27,11 +27,10 @@ const courseSchema = new mongoose.Schema({
   order: { type: Number, default: 0 }
 }, { timestamps: true });
 
-courseSchema.pre('validate', function(next) {
+courseSchema.pre('validate', function() {
   if (this.slug) {
     this.slug = generateSlug(this.slug);
   }
-  next();
 });
 
 module.exports = mongoose.model('Course', courseSchema);
