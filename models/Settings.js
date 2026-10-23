@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const settingsSchema = new mongoose.Schema({
-  companyName: { type: String, default: 'Venture Soft' },
+  companyName: { type: String, default: 'Venture Soft Tech' },
   logoUrl: { type: String, default: '/src/assets/logo.png' },
-  email: { type: String, default: 'info@venturesoft.com' },
+  email: { type: String, default: 'info@Venture Soft Tech.com' },
   phone: { type: String, default: '+91 80889 93756' },
   address: { type: String, default: 'Tech Hub Park, Suite 402, Bangalore, India' },
   socialLinks: {

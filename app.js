@@ -40,7 +40,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Health check endpoint
 app.get('/api/v1/health', (req, res) => {
-  res.json({ success: true, message: 'Venture Soft API is active and healthy.' });
+  res.json({ success: true, message: 'Venture Soft Tech API is active and healthy.' });
 });
 
 // API v1 Routes

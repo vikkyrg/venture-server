@@ -22,26 +22,26 @@ const seedData = async () => {
     // 1. Seed Super Admin
     await Admin.create({
       name: 'Venture Admin',
-      email: 'admin@venturesoft.com',
+      email: 'admin@Venture Soft Tech.com',
       password: 'admin123',
       role: 'superadmin'
     });
-    console.log('✅ Admin seeded: admin@venturesoft.com / admin123');
+    console.log('✅ Admin seeded: admin@Venture Soft Tech.com / admin123');
 
     // 2. Seed Settings
     await Settings.create({
-      companyName: 'Venture Soft',
+      companyName: 'Venture Soft Tech',
       logoUrl: '/src/assets/logo.png',
-      email: 'hr@venturesofts.com',
+      email: 'hr@Venture Soft Techs.com',
       phone: '+91 80889 93756',
-      address: 'Venture Soft Tech Campus, Electronic City, Bangalore 560100',
+      address: 'Venture Soft Tech Tech Campus, Electronic City, Bangalore 560100',
       socialLinks: {
-        linkedin: 'https://linkedin.com/company/venturesoft',
-        youtube: 'https://youtube.com/@venturesoft',
-        twitter: 'https://twitter.com/venturesoft',
-        github: 'https://github.com/venturesoft'
+        linkedin: 'https://linkedin.com/company/Venture Soft Tech',
+        youtube: 'https://youtube.com/@Venture Soft Tech',
+        twitter: 'https://twitter.com/Venture Soft Tech',
+        github: 'https://github.com/Venture Soft Tech'
       },
-      footerContent: 'Venture Soft is a premier technology training institute providing industry-focused courses in AIOps, Cloud Engineering, DevOps, and Systems Automation.',
+      footerContent: 'Venture Soft Tech is a premier technology training institute providing industry-focused courses in AIOps, Cloud Engineering, DevOps, and Systems Automation.',
       contactInfo: 'Talk to our senior career counselors to craft your learning path.'
     });
     console.log('✅ Site Settings seeded.');
@@ -423,7 +423,7 @@ AWK is a complete programming language designed for text processing and pattern 
     const createdTopics = await Topic.insertMany(topicsData);
     console.log(`✅ ${createdTopics.length} Topics seeded.`);
 
-    console.log('🎉 Full Venture Soft Curriculum Seeding Complete!');
+    console.log('🎉 Full Venture Soft Tech Curriculum Seeding Complete!');
     process.exit(0);
   } catch (error) {
     console.error('❌ Seeding Error:', error);
